@@ -1,0 +1,168 @@
+# ============================
+# UNIFIED GITIGNORE FOR BOTH PROJECTS
+# React Native (MalaabyApp) + NestJS (malaaby-backend)
+# ============================
+
+# ============================
+# Node.js & Dependencies
+# ============================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Package manager files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# ============================
+# Build & Compiled Output
+# ============================
+# NestJS backend
+/malaaby-backend/dist/
+/malaaby-backend/build/
+
+# React Native / Expo
+/MalaabyApp/.expo/
+/MalaabyApp/dist/
+/MalaabyApp/build/
+/MalaabyApp/web-build/
+
+# General build directories
+build/
+dist/
+out/
+.next/
+.nuxt/
+
+# ============================
+# Environment Variables
+# ============================
+.env
+.env.*
+!.env.example
+
+# ============================
+# Database Files
+# ============================
+*.db
+*.sqlite
+*.sqlite3
+/malaaby-backend/malaaby.db
+
+# ============================
+# Logs
+# ============================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# ============================
+# Cache & Temporary Files
+# ============================
+.cache/
+.parcel-cache/
+.tmp/
+.temp/
+tmp/
+temp/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Coverage directory used by tools like istanbul
+coverage/
+.nyc_output/
+
+# ============================
+# React Native Specific
+# ============================
+# Expo
+/MalaabyApp/.expo/
+/MalaabyApp/expo-env.d.ts
+
+# Metro bundler
+/MalaabyApp/.metro-health-check*
+
+# React Native
+/MalaabyApp/android/
+/MalaabyApp/ios/
+/MalaabyApp/.bundle/
+
+# ============================
+# IDE & Editor Files
+# ============================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-workspace
+*.sublime-project
+
+# VS Code specific
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# ============================
+# OS Generated Files
+# ============================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ============================
+# Runtime & Process Files
+# ============================
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# ============================
+# Dependency Directories
+# ============================
+jspm_packages/
+bower_components/
+
+# ============================
+# Optional Files
+# ============================
+.yarn-integrity
+.pnp.*
+
+# ============================
+# Security & Sensitive Files
+# ============================
+*.pem
+*.key
+*.cert
+
+# ============================
+# Design Files (keeping them for reference)
+# ============================
+# Uncomment if you want to exclude design files
+# *.png
+# *.jpg
+# *.jpeg
+# *.psd
+# *.sketch
