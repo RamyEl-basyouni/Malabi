@@ -1,5 +1,4 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { API_BASE_URL } from '../../config/api';
 
 export interface User {
   id: number;
@@ -22,30 +21,45 @@ const initialState: AuthState = {
   error: null,
 };
 
+// Mock users data
+const mockUsers = [
+  {
+    id: 1,
+    name: 'Mohammed Al-Rashid',
+    email: 'demo@malaaby.com',
+    phone: '+966501234567',
+  },
+  {
+    id: 2,
+    name: 'Ahmed Khalil',
+    email: 'test@example.com',
+    phone: '+966509876543',
+  },
+];
+
+// Fake login function that simulates API call
 export const loginUser = createAsyncThunk(
   'auth/loginUser',
   async ({ email, password }: { email: string; password: string }) => {
-    console.log('Attempting login to:', `${API_BASE_URL}/auth/login`);
+    console.log('🔐 Fake login attempt for:', email);
 
-    const response = await fetch(`${API_BASE_URL}/auth/login`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ email, password }),
-    });
+    // Simulate network delay
+    await new Promise(resolve => setTimeout(resolve, 1000));
 
-    console.log('Login response status:', response.status);
+    // Check credentials
+    const user = mockUsers.find(u => u.email === email);
 
-    if (!response.ok) {
-      const errorText = await response.text();
-      console.log('Login error:', errorText);
-      throw new Error(errorText || 'Login failed');
+    if (!user || password !== 'password123') {
+      throw new Error('Invalid email or password');
     }
 
-    const result = await response.json();
-    console.log('Login successful:', result.user.email);
-    return result;
+    const mockResponse = {
+      access_token: 'fake-jwt-token-' + Date.now(),
+      user: user,
+    };
+
+    console.log('✅ Fake login successful for:', user.name);
+    return mockResponse;
   }
 );
 

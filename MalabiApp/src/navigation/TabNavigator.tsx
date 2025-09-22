@@ -4,7 +4,8 @@ import { Ionicons } from '@expo/vector-icons';
 import { View } from 'react-native';
 
 import HomeScreen from '../screens/HomeScreen';
-import FilterScreen from '../screens/FilterScreen';
+import BookingsListScreen from '../screens/BookingsListScreen';
+import EventsScreen from '../screens/EventsScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import MalaabyLogo from '../components/MalaabyLogo';
 
@@ -19,36 +20,70 @@ export default function TabNavigator() {
 
           if (route.name === 'Home') {
             iconName = focused ? 'home' : 'home-outline';
-          } else if (route.name === 'Filter') {
-            iconName = focused ? 'filter' : 'filter-outline';
+          } else if (route.name === 'Bookings') {
+            iconName = focused ? 'calendar' : 'calendar-outline';
+          } else if (route.name === 'Events') {
+            iconName = focused ? 'trophy' : 'trophy-outline';
           } else if (route.name === 'Profile') {
             iconName = focused ? 'person' : 'person-outline';
           } else {
             iconName = 'home';
           }
 
-          return <Ionicons name={iconName} size={size} color={color} />;
+          return (
+            <View style={{
+              backgroundColor: focused ? '#00FF94' : 'transparent',
+              borderRadius: focused ? 20 : 0,
+              paddingHorizontal: focused ? 16 : 0,
+              paddingVertical: focused ? 8 : 0,
+              minWidth: focused ? 60 : 'auto',
+              alignItems: 'center',
+            }}>
+              <Ionicons
+                name={iconName}
+                size={size}
+                color={focused ? '#000000' : color}
+              />
+            </View>
+          );
         },
-        tabBarActiveTintColor: '#4F46E5',
-        tabBarInactiveTintColor: 'gray',
+        tabBarActiveTintColor: '#00FF94',
+        tabBarInactiveTintColor: '#9CA3AF',
         tabBarStyle: {
-          backgroundColor: '#1F2937',
-          borderTopColor: '#374151',
+          backgroundColor: '#000000',
+          borderTopColor: '#1F2937',
+          borderTopWidth: 1,
+          height: 80,
+          paddingBottom: 20,
+          paddingTop: 10,
         },
-        headerStyle: {
-          backgroundColor: '#1F2937',
+        tabBarLabelStyle: {
+          fontSize: 12,
+          fontWeight: '500',
         },
-        headerTintColor: '#FFFFFF',
-        headerTitle: () => (
-          <View style={{ alignItems: 'center' }}>
-            <MalaabyLogo width={120} height={40} />
-          </View>
-        ),
+        headerShown: false,
       })}
     >
-      <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Filter" component={FilterScreen} />
-      <Tab.Screen name="Profile" component={ProfileScreen} />
+      <Tab.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{ tabBarLabel: 'Home' }}
+      />
+      <Tab.Screen
+        name="Bookings"
+        component={BookingsListScreen}
+        options={{ tabBarLabel: 'Bookings' }}
+      />
+      <Tab.Screen
+        name="Events"
+        component={EventsScreen}
+        options={{ tabBarLabel: 'Events' }}
+      />
+      <Tab.Screen
+        name="Profile"
+        component={ProfileScreen}
+        options={{ tabBarLabel: 'Profile' }}
+      />
     </Tab.Navigator>
   );
 }

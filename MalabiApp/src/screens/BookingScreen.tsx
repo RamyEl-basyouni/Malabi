@@ -7,6 +7,7 @@ import {
   ScrollView,
   Alert,
   TextInput,
+  Image,
 } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigation, useRoute } from '@react-navigation/native';
@@ -15,7 +16,7 @@ import { RootState, AppDispatch } from '../store/store';
 import { createBooking } from '../store/slices/bookingsSlice';
 
 export default function BookingScreen() {
-  const navigation = useNavigation();
+  const navigation = useNavigation<any>();
   const route = useRoute<any>();
   const dispatch = useDispatch<AppDispatch>();
   const { user } = useSelector((state: RootState) => state.auth);
@@ -57,24 +58,43 @@ export default function BookingScreen() {
     }
 
     try {
-      await dispatch(createBooking({
+      const booking = await dispatch(createBooking({
         userId: user.id,
         groundId: ground.id,
         date: selectedDate,
         startTime,
         endTime,
+        ground: {
+          id: ground.id,
+          name: ground.name,
+          pricePerHour: ground.pricePerHour,
+          images: ground.images || [],
+          sportType: ground.sportType,
+          groundType: ground.groundType,
+          capacity: ground.capacity,
+        },
+        club: {
+          id: club.id,
+          name: club.name,
+          address: club.address,
+          images: club.images || [],
+          rating: club.rating,
+        },
+        totalPrice: calculatePrice(),
       })).unwrap();
 
-      Alert.alert(
-        'Booking Successful!',
-        'Your booking has been created successfully.',
-        [
-          {
-            text: 'OK',
-            onPress: () => navigation.goBack(),
-          },
-        ]
-      );
+      // Navigate to confirmation screen with booking data
+      navigation.navigate('BookingConfirmation', {
+        bookingData: {
+          id: `GR${booking.id.toString().padStart(4, '0')}`,
+          clubName: club.name,
+          groundName: ground.name,
+          date: selectedDate,
+          startTime,
+          endTime,
+          location: club.address,
+        }
+      });
     } catch (error) {
       Alert.alert('Error', 'Failed to create booking. Please try again.');
     }
@@ -102,6 +122,49 @@ export default function BookingScreen() {
       <View style={styles.header}>
         <Text style={styles.title}>Book Ground</Text>
         <Text style={styles.subtitle}>{ground.name} at {club.name}</Text>
+      </View>
+
+      {/* Ground Details Section */}
+      <View style={styles.groundDetailsSection}>
+        <View style={styles.groundImageContainer}>
+          <Image
+            source={{ uri: ground.images?.[0] || club.images?.[0] || 'https://via.placeholder.com/300' }}
+            style={styles.groundImage}
+          />
+          <View style={styles.groundOverlay}>
+            <View style={styles.sportTypebadge}>
+              <Ionicons
+                name={ground.sportType === 'football' ? 'football-outline' : ground.sportType === 'volleyball' ? 'basketball-outline' : 'tennisball-outline'}
+                size={16}
+                color="#FFFFFF"
+              />
+              <Text style={styles.sportTypeText}>{ground.sportType?.charAt(0).toUpperCase() + ground.sportType?.slice(1)}</Text>
+            </View>
+            <View style={styles.pricePerHourBadge}>
+              <Text style={styles.pricePerHourText}>SAR {ground.pricePerHour}/hr</Text>
+            </View>
+          </View>
+        </View>
+        <View style={styles.groundInfo}>
+          <View style={styles.groundInfoRow}>
+            <Ionicons name="location-outline" size={16} color="#9CA3AF" />
+            <Text style={styles.groundInfoText}>{club.address}</Text>
+          </View>
+          <View style={styles.groundInfoRow}>
+            <Ionicons name="resize-outline" size={16} color="#9CA3AF" />
+            <Text style={styles.groundInfoText}>Capacity: {ground.capacity} players</Text>
+          </View>
+          <View style={styles.groundInfoRow}>
+            <Ionicons name="leaf-outline" size={16} color="#9CA3AF" />
+            <Text style={styles.groundInfoText}>{ground.groundType?.charAt(0).toUpperCase() + ground.groundType?.slice(1)} surface</Text>
+          </View>
+          {club.rating && (
+            <View style={styles.groundInfoRow}>
+              <Ionicons name="star" size={16} color="#FCD34D" />
+              <Text style={styles.groundInfoText}>{club.rating} rating</Text>
+            </View>
+          )}
+        </View>
       </View>
 
       <View style={styles.section}>
@@ -350,5 +413,70 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     fontSize: 18,
     fontWeight: '600',
+  },
+  groundDetailsSection: {
+    marginHorizontal: 20,
+    marginBottom: 24,
+    backgroundColor: '#1F2937',
+    borderRadius: 12,
+    overflow: 'hidden',
+  },
+  groundImageContainer: {
+    position: 'relative',
+  },
+  groundImage: {
+    width: '100%',
+    height: 160,
+  },
+  groundOverlay: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: 'rgba(0, 0, 0, 0.3)',
+    justifyContent: 'space-between',
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    padding: 12,
+  },
+  sportTypebadge: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.7)',
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+    borderRadius: 12,
+  },
+  sportTypeText: {
+    color: '#FFFFFF',
+    fontSize: 12,
+    fontWeight: '600',
+    marginLeft: 4,
+  },
+  pricePerHourBadge: {
+    backgroundColor: '#10B981',
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+    borderRadius: 6,
+  },
+  pricePerHourText: {
+    color: '#FFFFFF',
+    fontSize: 12,
+    fontWeight: '600',
+  },
+  groundInfo: {
+    padding: 16,
+  },
+  groundInfoRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 8,
+  },
+  groundInfoText: {
+    color: '#9CA3AF',
+    fontSize: 14,
+    marginLeft: 8,
+    flex: 1,
   },
 });

@@ -3,11 +3,13 @@ import { Platform } from 'react-native';
 // API Configuration
 const getBaseUrl = () => {
   if (__DEV__) {
-    // In development, use your machine's IP address
-    // Replace this with your actual IP address
+    // In development, use localhost for web and proper IPs for mobile
+    if (Platform.OS === 'web') {
+      return 'http://localhost:3001'; // Web development
+    }
     return Platform.OS === 'android'
-      ? 'http://10.0.2.2:3000' // Android emulator
-      : 'http://172.20.10.4:3000'; // iOS simulator or physical device
+      ? 'http://10.0.2.2:3001' // Android emulator
+      : 'http://localhost:3001'; // iOS simulator or physical device
   }
 
   // In production, use your deployed backend URL
