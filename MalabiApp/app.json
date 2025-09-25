@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "Malabi - Ground Booking",
+    "name": "Malaabi",
     "slug": "malabi-ground-booking",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/appLogo.png",
+    "icon": "./assets/icon.png",
     "userInterfaceStyle": "dark",
     "newArchEnabled": true,
     "splash": {
@@ -14,15 +14,15 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "sa.malabi.groundbooking",
+      "bundleIdentifier": "sa.tetco.malaabi.groundbooking",
       "buildNumber": "1"
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#000000"
       },
-      "package": "sa.malabi.groundbooking",
+      "package": "sa.tetco.malaabi.groundbooking",
       "versionCode": 1,
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false

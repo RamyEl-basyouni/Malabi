@@ -17,6 +17,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { RootState, AppDispatch } from '../store/store';
 import { fetchUserBookings, Booking } from '../store/slices/bookingsSlice';
 import { fetchClubs, setFilters } from '../store/slices/clubsSlice';
+import StadiumBackground from '../components/StadiumBackground';
 
 const { width } = Dimensions.get('window');
 
@@ -263,7 +264,8 @@ export default function HomeScreen() {
   );
 
   return (
-    <SafeAreaView style={styles.container}>
+    <StadiumBackground overlayOpacity={0.7}>
+      <SafeAreaView style={styles.container}>
       <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
         {/* Header */}
         <View style={styles.header}>
@@ -372,14 +374,15 @@ export default function HomeScreen() {
           )}
         </View>
       </ScrollView>
-    </SafeAreaView>
+      </SafeAreaView>
+    </StadiumBackground>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#000000',
+    backgroundColor: 'transparent',
   },
   scrollView: {
     flex: 1,

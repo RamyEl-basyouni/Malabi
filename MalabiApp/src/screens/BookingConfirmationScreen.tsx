@@ -6,9 +6,13 @@ import {
   StyleSheet,
   Modal,
   SafeAreaView,
+  ImageBackground,
+  Dimensions,
 } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
+
+const { width, height } = Dimensions.get('window');
 
 interface BookingConfirmationProps {
   visible: boolean;
@@ -54,72 +58,101 @@ export default function BookingConfirmationScreen() {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.content}>
-        {/* Close Button */}
-        <TouchableOpacity style={styles.closeButton} onPress={handleClose}>
-          <Ionicons name="close" size={24} color="#374151" />
-        </TouchableOpacity>
+    <View style={styles.container}>
+      <ImageBackground
+        source={{ uri: 'https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=800&q=80' }}
+        style={styles.backgroundImage}
+        resizeMode="cover"
+      >
+        <View style={styles.overlay} />
+        <SafeAreaView style={styles.safeArea}>
+          <View style={styles.modalOverlay}>
+            <View style={styles.content}>
+          {/* Close Button */}
+          <TouchableOpacity style={styles.closeButton} onPress={handleClose}>
+            <Ionicons name="close" size={24} color="#374151" />
+          </TouchableOpacity>
 
-        {/* Success Icon */}
-        <View style={styles.iconContainer}>
-          <View style={styles.successIcon}>
-            <Ionicons name="checkmark" size={32} color="#FFFFFF" />
-          </View>
-        </View>
-
-        {/* Club Name */}
-        <Text style={styles.clubName}>{bookingData.clubName}</Text>
-
-        {/* Location */}
-        <View style={styles.locationContainer}>
-          <Ionicons name="walk-outline" size={16} color="#9CA3AF" />
-          <Text style={styles.locationText}>5 Mins • {bookingData.location}</Text>
-        </View>
-
-        {/* Booking Details */}
-        <View style={styles.detailsContainer}>
-          <View style={styles.detailRow}>
-            <Text style={styles.detailLabel}>Ground</Text>
-            <Text style={styles.detailValue}>{bookingData.groundName}</Text>
+          {/* Success Icon */}
+          <View style={styles.iconContainer}>
+            <View style={styles.successIcon}>
+              <Ionicons name="football" size={32} color="#FFFFFF" />
+            </View>
           </View>
 
-          <View style={styles.detailRow}>
-            <Text style={styles.detailLabel}>Booking Code</Text>
-            <Text style={styles.detailValue}>{bookingData.id}</Text>
+          {/* Club Name */}
+          <Text style={styles.clubName}>{bookingData.clubName}</Text>
+
+          {/* Location */}
+          <View style={styles.locationContainer}>
+            <Ionicons name="walk-outline" size={16} color="#9CA3AF" />
+            <Text style={styles.locationText}>5 Mins • {bookingData.location}</Text>
           </View>
 
-          <View style={styles.detailRow}>
-            <Text style={styles.detailLabel}>Date</Text>
-            <Text style={styles.detailValue}>{formatDate(bookingData.date)}</Text>
+          {/* Booking Details */}
+          <View style={styles.detailsContainer}>
+            <View style={styles.detailRow}>
+              <Text style={styles.detailLabel}>Ground</Text>
+              <Text style={styles.detailValue}>{bookingData.groundName}</Text>
+            </View>
+
+            <View style={styles.detailRow}>
+              <Text style={styles.detailLabel}>Booking Code</Text>
+              <Text style={styles.detailValue}>{bookingData.id}</Text>
+            </View>
+
+            <View style={styles.detailRow}>
+              <Text style={styles.detailLabel}>Date</Text>
+              <Text style={styles.detailValue}>{formatDate(bookingData.date)}</Text>
+            </View>
+
+            <View style={styles.detailRow}>
+              <Text style={styles.detailLabel}>Time</Text>
+              <Text style={styles.detailValue}>
+                {formatTime(bookingData.startTime)} - {formatTime(bookingData.endTime)}
+              </Text>
+            </View>
           </View>
 
-          <View style={styles.detailRow}>
-            <Text style={styles.detailLabel}>Time</Text>
-            <Text style={styles.detailValue}>
-              {formatTime(bookingData.startTime)} - {formatTime(bookingData.endTime)}
-            </Text>
+          {/* Confirmation Message */}
+          <Text style={styles.confirmationText}>Booking Confirmed!!</Text>
+
+              {/* Confirm Button */}
+              <TouchableOpacity style={styles.confirmButton} onPress={handleClose}>
+                <Text style={styles.confirmButtonText}>Confirm</Text>
+              </TouchableOpacity>
+            </View>
           </View>
-        </View>
-
-        {/* Confirmation Message */}
-        <Text style={styles.confirmationText}>Booking Confirmed!!</Text>
-
-        {/* Confirm Button */}
-        <TouchableOpacity style={styles.confirmButton} onPress={handleClose}>
-          <Text style={styles.confirmButtonText}>Confirm</Text>
-        </TouchableOpacity>
-      </View>
-    </SafeAreaView>
+        </SafeAreaView>
+      </ImageBackground>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'rgba(0, 0, 0, 0.7)',
+    backgroundColor: '#000000',
+  },
+  backgroundImage: {
+    flex: 1,
+    width: width,
+    height: height,
+  },
+  overlay: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: 'rgba(0, 0, 0, 0.4)',
+  },
+  safeArea: {
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  modalOverlay: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingHorizontal: 20,
   },
   content: {
     backgroundColor: '#FFFFFF',

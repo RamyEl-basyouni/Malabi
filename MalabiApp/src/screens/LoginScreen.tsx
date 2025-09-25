@@ -48,7 +48,7 @@ export default function LoginScreen() {
   return (
     <View style={styles.container}>
       <ImageBackground
-        source={{ uri: 'https://images.pexels.com/photos/399187/pexels-photo-399187.jpeg?w=800' }}
+        source={{ uri: 'https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=800&q=80' }}
         style={styles.backgroundImage}
         resizeMode="cover"
       >
@@ -144,15 +144,16 @@ const styles = StyleSheet.create({
   },
   overlay: {
     ...StyleSheet.absoluteFillObject,
-    backgroundColor: 'rgba(0, 0, 0, 0.6)',
+    backgroundColor: 'rgba(0, 0, 0, 0.4)',
   },
   safeArea: {
     flex: 1,
-    justifyContent: 'flex-end',
+    justifyContent: 'space-between',
+    paddingTop: 60,
   },
   tabContainer: {
     alignItems: 'center',
-    marginBottom: 40,
+    marginBottom: 0,
   },
   tabButtons: {
     flexDirection: 'row',

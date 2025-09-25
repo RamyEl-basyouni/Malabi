@@ -1,0 +1,234 @@
+import React from 'react';
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  StyleSheet,
+  Modal,
+} from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
+
+interface BookingConfirmationModalProps {
+  visible: boolean;
+  onClose: () => void;
+  bookingData: {
+    id: string;
+    clubName: string;
+    groundName: string;
+    date: string;
+    startTime: string;
+    endTime: string;
+    location: string;
+  };
+}
+
+export default function BookingConfirmationModal({
+  visible,
+  onClose,
+  bookingData,
+}: BookingConfirmationModalProps) {
+  const formatDate = (dateString: string) => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString('en-US', {
+      weekday: 'short',
+      day: '2-digit',
+      month: 'short'
+    });
+  };
+
+  const formatTime = (timeString: string) => {
+    const [hours, minutes] = timeString.split(':');
+    const hour = parseInt(hours);
+    const ampm = hour >= 12 ? 'PM' : 'AM';
+    const displayHour = hour % 12 || 12;
+    return `${displayHour.toString().padStart(2, '0')} ${ampm}`;
+  };
+
+  return (
+    <Modal
+      animationType="fade"
+      transparent={true}
+      visible={visible}
+      onRequestClose={onClose}
+    >
+      <View style={styles.modalOverlay}>
+        <TouchableOpacity
+          style={styles.backgroundTouchable}
+          activeOpacity={1}
+          onPress={onClose}
+        >
+          <View style={styles.content} onStartShouldSetResponder={() => true}>
+            {/* Close Button */}
+            <TouchableOpacity style={styles.closeButton} onPress={onClose}>
+              <Ionicons name="close" size={24} color="#374151" />
+            </TouchableOpacity>
+
+            {/* Success Icon */}
+            <View style={styles.iconContainer}>
+              <View style={styles.successIcon}>
+                <Ionicons name="checkmark" size={32} color="#FFFFFF" />
+              </View>
+            </View>
+
+            {/* Club Name */}
+            <Text style={styles.clubName}>{bookingData.clubName}</Text>
+
+            {/* Location */}
+            <View style={styles.locationContainer}>
+              <Ionicons name="walk-outline" size={16} color="#9CA3AF" />
+              <Text style={styles.locationText}>5 Mins • {bookingData.location}</Text>
+            </View>
+
+            {/* Booking Details */}
+            <View style={styles.detailsContainer}>
+              <View style={styles.detailRow}>
+                <Text style={styles.detailLabel}>Ground</Text>
+                <Text style={styles.detailValue}>{bookingData.groundName}</Text>
+              </View>
+
+              <View style={styles.detailRow}>
+                <Text style={styles.detailLabel}>Booking Code</Text>
+                <Text style={styles.detailValue}>{bookingData.id}</Text>
+              </View>
+
+              <View style={styles.detailRow}>
+                <Text style={styles.detailLabel}>Date</Text>
+                <Text style={styles.detailValue}>{formatDate(bookingData.date)}</Text>
+              </View>
+
+              <View style={styles.detailRow}>
+                <Text style={styles.detailLabel}>Time</Text>
+                <Text style={styles.detailValue}>
+                  {formatTime(bookingData.startTime)} - {formatTime(bookingData.endTime)}
+                </Text>
+              </View>
+            </View>
+
+            {/* Confirmation Message */}
+            <Text style={styles.confirmationText}>Booking Confirmed!!</Text>
+
+            {/* Confirm Button */}
+            <TouchableOpacity style={styles.confirmButton} onPress={onClose}>
+              <Text style={styles.confirmButtonText}>Confirm</Text>
+            </TouchableOpacity>
+          </View>
+        </TouchableOpacity>
+      </View>
+    </Modal>
+  );
+}
+
+const styles = StyleSheet.create({
+  modalOverlay: {
+    flex: 1,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  backgroundTouchable: {
+    flex: 1,
+    width: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  content: {
+    backgroundColor: '#FFFFFF',
+    borderRadius: 20,
+    padding: 24,
+    margin: 20,
+    width: '90%',
+    alignItems: 'center',
+    position: 'relative',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 10,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 20,
+    elevation: 15,
+  },
+  closeButton: {
+    position: 'absolute',
+    top: 16,
+    right: 16,
+    width: 32,
+    height: 32,
+    borderRadius: 16,
+    backgroundColor: '#F3F4F6',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  iconContainer: {
+    marginTop: 20,
+    marginBottom: 24,
+  },
+  successIcon: {
+    width: 80,
+    height: 80,
+    borderRadius: 40,
+    backgroundColor: '#10B981',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  clubName: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#111827',
+    textAlign: 'center',
+    marginBottom: 8,
+  },
+  locationContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 32,
+  },
+  locationText: {
+    fontSize: 14,
+    color: '#9CA3AF',
+    marginLeft: 4,
+  },
+  detailsContainer: {
+    width: '100%',
+    backgroundColor: '#F9FAFB',
+    borderRadius: 12,
+    padding: 16,
+    marginBottom: 24,
+  },
+  detailRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingVertical: 8,
+  },
+  detailLabel: {
+    fontSize: 16,
+    color: '#6B7280',
+    fontWeight: '500',
+  },
+  detailValue: {
+    fontSize: 16,
+    color: '#111827',
+    fontWeight: '600',
+  },
+  confirmationText: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#111827',
+    textAlign: 'center',
+    marginBottom: 32,
+  },
+  confirmButton: {
+    backgroundColor: '#10B981',
+    paddingVertical: 16,
+    paddingHorizontal: 32,
+    borderRadius: 12,
+    width: '100%',
+    alignItems: 'center',
+  },
+  confirmButtonText: {
+    color: '#FFFFFF',
+    fontSize: 18,
+    fontWeight: '600',
+  },
+});

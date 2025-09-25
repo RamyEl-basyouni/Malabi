@@ -9,27 +9,27 @@
 /* Begin PBXBuildFile section */
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */; };
-		45FE0795D6871FF4FBA33FAF /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 4B0E8071CDD757C687A3C94E /* PrivacyInfo.xcprivacy */; };
-		56968EF91B5620A0CF131947 /* libPods-MalabiGroundBooking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE82E9D7F1F6A10817574240 /* libPods-MalabiGroundBooking.a */; };
-		A74384C80F65ECA217E0C9EC /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560E4C74F92AD3C0366972A4 /* ExpoModulesProvider.swift */; };
+		A0AD7A54F567FE8ACF188B0A /* libPods-MalabiGroundBooking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90D485E16F6C1AF90466FDB1 /* libPods-MalabiGroundBooking.a */; };
+		B3588F93DADE14A0A29AA2E5 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = FE7E6DFE59BCB3318D7C9B32 /* PrivacyInfo.xcprivacy */; };
 		BB2F792D24A3F905000567C9 /* Expo.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB2F792C24A3F905000567C9 /* Expo.plist */; };
 		F11748422D0307B40044C1D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11748412D0307B40044C1D9 /* AppDelegate.swift */; };
+		FA4E416CED447B8731F41C85 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4259FEEDD68D6A22E588B34 /* ExpoModulesProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		13B07F961A680F5B00A75B9A /* MalabiGroundBooking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MalabiGroundBooking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = MalabiGroundBooking/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = MalabiGroundBooking/Info.plist; sourceTree = "<group>"; };
-		4B0E8071CDD757C687A3C94E /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = MalabiGroundBooking/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		560E4C74F92AD3C0366972A4 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-MalabiGroundBooking/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
-		94A7380FC652823CCAB1FD79 /* Pods-MalabiGroundBooking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MalabiGroundBooking.debug.xcconfig"; path = "Target Support Files/Pods-MalabiGroundBooking/Pods-MalabiGroundBooking.debug.xcconfig"; sourceTree = "<group>"; };
-		9668A7DF10708BED755F0186 /* Pods-MalabiGroundBooking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MalabiGroundBooking.release.xcconfig"; path = "Target Support Files/Pods-MalabiGroundBooking/Pods-MalabiGroundBooking.release.xcconfig"; sourceTree = "<group>"; };
+		6A62ABC7805B99266D611646 /* Pods-MalabiGroundBooking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MalabiGroundBooking.release.xcconfig"; path = "Target Support Files/Pods-MalabiGroundBooking/Pods-MalabiGroundBooking.release.xcconfig"; sourceTree = "<group>"; };
+		90D485E16F6C1AF90466FDB1 /* libPods-MalabiGroundBooking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MalabiGroundBooking.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SplashScreen.storyboard; path = MalabiGroundBooking/SplashScreen.storyboard; sourceTree = "<group>"; };
 		BB2F792C24A3F905000567C9 /* Expo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Expo.plist; sourceTree = "<group>"; };
-		DE82E9D7F1F6A10817574240 /* libPods-MalabiGroundBooking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MalabiGroundBooking.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4259FEEDD68D6A22E588B34 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-MalabiGroundBooking/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
+		E6013FCF88607B398A523C72 /* Pods-MalabiGroundBooking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MalabiGroundBooking.debug.xcconfig"; path = "Target Support Files/Pods-MalabiGroundBooking/Pods-MalabiGroundBooking.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		F11748412D0307B40044C1D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = MalabiGroundBooking/AppDelegate.swift; sourceTree = "<group>"; };
 		F11748442D0722820044C1D9 /* MalabiGroundBooking-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MalabiGroundBooking-Bridging-Header.h"; path = "MalabiGroundBooking/MalabiGroundBooking-Bridging-Header.h"; sourceTree = "<group>"; };
+		FE7E6DFE59BCB3318D7C9B32 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = MalabiGroundBooking/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,30 +37,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56968EF91B5620A0CF131947 /* libPods-MalabiGroundBooking.a in Frameworks */,
+				A0AD7A54F567FE8ACF188B0A /* libPods-MalabiGroundBooking.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0374A8AC45EFD5CA0EC3FD07 /* ExpoModulesProviders */ = {
-			isa = PBXGroup;
-			children = (
-				6C9C70EDB763438D86DBE666 /* MalabiGroundBooking */,
-			);
-			name = ExpoModulesProviders;
-			sourceTree = "<group>";
-		};
-		08373E175C3A0C58BF56FB8F /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				94A7380FC652823CCAB1FD79 /* Pods-MalabiGroundBooking.debug.xcconfig */,
-				9668A7DF10708BED755F0186 /* Pods-MalabiGroundBooking.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		13B07FAE1A68108700A75B9A /* MalabiGroundBooking */ = {
 			isa = PBXGroup;
 			children = (
@@ -70,7 +53,7 @@
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */,
-				4B0E8071CDD757C687A3C94E /* PrivacyInfo.xcprivacy */,
+				FE7E6DFE59BCB3318D7C9B32 /* PrivacyInfo.xcprivacy */,
 			);
 			name = MalabiGroundBooking;
 			sourceTree = "<group>";
@@ -79,17 +62,9 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				DE82E9D7F1F6A10817574240 /* libPods-MalabiGroundBooking.a */,
+				90D485E16F6C1AF90466FDB1 /* libPods-MalabiGroundBooking.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		6C9C70EDB763438D86DBE666 /* MalabiGroundBooking */ = {
-			isa = PBXGroup;
-			children = (
-				560E4C74F92AD3C0366972A4 /* ExpoModulesProvider.swift */,
-			);
-			name = MalabiGroundBooking;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -106,8 +81,8 @@
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
-				08373E175C3A0C58BF56FB8F /* Pods */,
-				0374A8AC45EFD5CA0EC3FD07 /* ExpoModulesProviders */,
+				F6DB8BE0F2FE7BB095153117 /* Pods */,
+				A899A9A4940398DBC9CC4EB5 /* ExpoModulesProviders */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -122,6 +97,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		A899A9A4940398DBC9CC4EB5 /* ExpoModulesProviders */ = {
+			isa = PBXGroup;
+			children = (
+				E25394FE481317B1DC16345F /* MalabiGroundBooking */,
+			);
+			name = ExpoModulesProviders;
+			sourceTree = "<group>";
+		};
 		BB2F792B24A3F905000567C9 /* Supporting */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +112,23 @@
 			);
 			name = Supporting;
 			path = MalabiGroundBooking/Supporting;
+			sourceTree = "<group>";
+		};
+		E25394FE481317B1DC16345F /* MalabiGroundBooking */ = {
+			isa = PBXGroup;
+			children = (
+				E4259FEEDD68D6A22E588B34 /* ExpoModulesProvider.swift */,
+			);
+			name = MalabiGroundBooking;
+			sourceTree = "<group>";
+		};
+		F6DB8BE0F2FE7BB095153117 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E6013FCF88607B398A523C72 /* Pods-MalabiGroundBooking.debug.xcconfig */,
+				6A62ABC7805B99266D611646 /* Pods-MalabiGroundBooking.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,13 +139,13 @@
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "MalabiGroundBooking" */;
 			buildPhases = (
 				08A4A3CD28434E44B6B9DE2E /* [CP] Check Pods Manifest.lock */,
-				822006B790CDB61F8044DADA /* [Expo] Configure project */,
+				90FE33D14A0A3549AE80EF9A /* [Expo] Configure project */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				800E24972A6A228C8D4807E9 /* [CP] Copy Pods Resources */,
-				9CFB5055794826034A1B2423 /* [CP] Embed Pods Frameworks */,
+				4FFB804E19C30EBB1C0DC9EF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -195,7 +195,7 @@
 				BB2F792D24A3F905000567C9 /* Expo.plist in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */,
-				45FE0795D6871FF4FBA33FAF /* PrivacyInfo.xcprivacy in Resources */,
+				B3588F93DADE14A0A29AA2E5 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +239,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4FFB804E19C30EBB1C0DC9EF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MalabiGroundBooking/Pods-MalabiGroundBooking-frameworks.sh",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/React-Core-prebuilt/React.framework/React",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/ReactNativeDependencies/ReactNativeDependencies.framework/ReactNativeDependencies",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/hermes-engine/Pre-built/hermes.framework/hermes",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/React.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactNativeDependencies.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/hermes.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MalabiGroundBooking/Pods-MalabiGroundBooking-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		800E24972A6A228C8D4807E9 /* [CP] Copy Pods Resources */ = {
@@ -307,7 +329,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MalabiGroundBooking/Pods-MalabiGroundBooking-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		822006B790CDB61F8044DADA /* [Expo] Configure project */ = {
+		90FE33D14A0A3549AE80EF9A /* [Expo] Configure project */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
@@ -331,28 +353,6 @@
 			shellPath = /bin/sh;
 			shellScript = "# This script configures Expo modules and generates the modules provider file.\nbash -l -c \"./Pods/Target\\ Support\\ Files/Pods-MalabiGroundBooking/expo-configure-project.sh\"\n";
 		};
-		9CFB5055794826034A1B2423 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MalabiGroundBooking/Pods-MalabiGroundBooking-frameworks.sh",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/React-Core-prebuilt/React.framework/React",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/ReactNativeDependencies/ReactNativeDependencies.framework/ReactNativeDependencies",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/hermes-engine/Pre-built/hermes.framework/hermes",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/React.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactNativeDependencies.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/hermes.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MalabiGroundBooking/Pods-MalabiGroundBooking-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -361,7 +361,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F11748422D0307B40044C1D9 /* AppDelegate.swift in Sources */,
-				A74384C80F65ECA217E0C9EC /* ExpoModulesProvider.swift in Sources */,
+				FA4E416CED447B8731F41C85 /* ExpoModulesProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,7 +370,7 @@
 /* Begin XCBuildConfiguration section */
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 94A7380FC652823CCAB1FD79 /* Pods-MalabiGroundBooking.debug.xcconfig */;
+			baseConfigurationReference = E6013FCF88607B398A523C72 /* Pods-MalabiGroundBooking.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -395,7 +395,7 @@
 					"-lc++",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_DEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = sa.malabi.groundbooking;
+				PRODUCT_BUNDLE_IDENTIFIER = sa.tetco.malaabi.groundbooking;
 				PRODUCT_NAME = MalabiGroundBooking;
 				SWIFT_OBJC_BRIDGING_HEADER = "MalabiGroundBooking/MalabiGroundBooking-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -407,7 +407,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9668A7DF10708BED755F0186 /* Pods-MalabiGroundBooking.release.xcconfig */;
+			baseConfigurationReference = 6A62ABC7805B99266D611646 /* Pods-MalabiGroundBooking.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -427,7 +427,7 @@
 					"-lc++",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_RELEASE";
-				PRODUCT_BUNDLE_IDENTIFIER = sa.malabi.groundbooking;
+				PRODUCT_BUNDLE_IDENTIFIER = sa.tetco.malaabi.groundbooking;
 				PRODUCT_NAME = MalabiGroundBooking;
 				SWIFT_OBJC_BRIDGING_HEADER = "MalabiGroundBooking/MalabiGroundBooking-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
