@@ -55,20 +55,21 @@ export default function LoginScreen() {
         <View style={styles.overlay} />
 
         <SafeAreaView style={styles.safeArea}>
-          {/* Top Section - Tab buttons */}
-          <View style={styles.tabContainer}>
-            <View style={styles.tabButtons}>
-              <TouchableOpacity style={styles.activeTab}>
-                <Text style={styles.activeTabText}>Log In</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.inactiveTab}>
-                <Text style={styles.inactiveTabText}>Create Account</Text>
-              </TouchableOpacity>
+          <View style={styles.contentContainer}>
+            {/* Top Section - Tab buttons */}
+            <View style={styles.tabContainer}>
+              <View style={styles.tabButtons}>
+                <TouchableOpacity style={styles.activeTab}>
+                  <Text style={styles.activeTabText}>Log In</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.inactiveTab}>
+                  <Text style={styles.inactiveTabText}>Create Account</Text>
+                </TouchableOpacity>
+              </View>
             </View>
-          </View>
 
-          {/* Form Section */}
-          <View style={styles.formContainer}>
+            {/* Form Section */}
+            <View style={styles.formContainer}>
             <Text style={styles.inputLabel}>Email</Text>
             <TextInput
               style={styles.input}
@@ -125,6 +126,7 @@ export default function LoginScreen() {
             <View style={styles.demoInfo}>
               <Text style={styles.demoTitle}>Demo: demo@malaaby.com / password123</Text>
             </View>
+            </View>
           </View>
         </SafeAreaView>
       </ImageBackground>
@@ -148,12 +150,15 @@ const styles = StyleSheet.create({
   },
   safeArea: {
     flex: 1,
-    justifyContent: 'space-between',
-    paddingTop: 60,
+    justifyContent: 'flex-end',
+  },
+  contentContainer: {
+    flex: 1,
+    justifyContent: 'flex-end',
   },
   tabContainer: {
     alignItems: 'center',
-    marginBottom: 0,
+    marginBottom: 30,
   },
   tabButtons: {
     flexDirection: 'row',
